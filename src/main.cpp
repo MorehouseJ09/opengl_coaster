@@ -10,12 +10,18 @@
 #include <GLUT/glut.h>
 #include <pic.h>
 
+// initialize a global state object
+// keep this in memory for speed
+application::State state;//this is the global state object 
 
-// window variables etc
-int windowHeight = 600, 
-  windowWidth = 600;
 
 
+
+
+
+
+
+// initialize main functionality etc
 int main (int argc, char ** argv) {
 
   // set up the initializer function for glut
@@ -25,10 +31,12 @@ int main (int argc, char ** argv) {
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
 
   // set up the window size 
-  glutInitWindowSize(windowWidth, windowHeight);
+  glutInitWindowSize(state.getScreenWidth(), state.getScreenHeight());
 
   // set the window position
+  // could initialize this later to have the state class get the full screen or something?
   glutInitWindowPosition(100, 100);
+
   // name the window etc ... 
   glutCreateWindow("Image Height Field");
 

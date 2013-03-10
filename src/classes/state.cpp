@@ -74,7 +74,20 @@ namespace application {
 		return this->data.cameraRotation[axe];
 
 	}
+
+	const int State::getScreenWidth() {
+
+
+		return this->data.screenWidth;
+
+	}
 	
+	const int State::getScreenHeight() {
+
+
+		return this->data.screenHeight;
+
+	}
 	//*********** PUBLIC SETTER FUNCTIONS **********//	
 	void State::setRotation(coordinate axe, float value) {
 

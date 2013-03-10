@@ -22,7 +22,7 @@ namespace image {
 	extern int screenshotCounter;//what screenshot we are currently on
 
 	void saveScreenshot (char * filename);//
-	void screenshotController();//runs the screenshot controller	
+	inline void screenshotController();//runs the screenshot controller	
 }
 
 #endif
