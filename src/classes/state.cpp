@@ -43,10 +43,7 @@ namespace application {
 	// grab rotation of element
 	const float State::getRotation(coordinate axe) {
 
-
 		return this->data.rotation[this->getIndex(axe)];
-
-
 	}
 
 
@@ -60,34 +57,28 @@ namespace application {
 	const float State::getScale(coordinate axe) {
 
 		return this->data.scale[this->getIndex(axe)];
-
 	}
 
 	const float State::getCameraDistance() {
 
 		return this->data.cameraDistance;
-
 	}
 
 	const float State::getCameraRotation(coordinate axe) {
 
 		return this->data.cameraRotation[axe];
-
 	}
 
 	const int State::getScreenWidth() {
 
-
 		return this->data.screenWidth;
-
 	}
 	
 	const int State::getScreenHeight() {
 
-
 		return this->data.screenHeight;
-
 	}
+	
 	//*********** PUBLIC SETTER FUNCTIONS **********//	
 	void State::setRotation(coordinate axe, float value) {
 
