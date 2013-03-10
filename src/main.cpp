@@ -1,25 +1,20 @@
-#include "classes/state.hpp"
+#include "classes/state.hpp" // basic state of the application this is a global variable
+#include "classes/controller.hpp" //basic controller of the application
 // #include "modules/image.hpp" //useful for user interaction etc
 // #include "modules/interaction.hpp" //responsible for handling user interaction
 // #include "modules/display.hpp" //responsible for drawing out the actual map elements
 
 // include application code base / namespaces
 #include <stdlib.h>
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#include <GLUT/glut.h>
-#include <pic.h>
+#include <vector>//store splines in vector in our controller class
+#include <OpenGL/gl.h>//initialize gl interfaces 
+#include <OpenGL/glu.h>//initialize gl ui
+#include <GLUT/glut.h>//initialize gl user interaction libraries
+#include <pic.h>//initialize pic librar
 
 // initialize a global state object
 // keep this in memory for speed
 application::State state;//this is the global state object 
-
-
-
-
-
-
-
 
 // initialize main functionality etc
 int main (int argc, char ** argv) {

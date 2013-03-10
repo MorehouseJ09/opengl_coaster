@@ -16,14 +16,17 @@ INCLUDE += -Iinclude
 
 LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
 
-COMPILER = g++
+# COMPILER = g++
+# use the g++ 4.8 compiler instead of the defaul apple xcode cli tools installed version (4.2)
+COMPILER = /usr/local/gcc/usr/local/bin/g++
 COMPILERFLAGS = -O3 $(INCLUDE)
 PROGRAM = current
+SOURCES = src/main.cpp src/classes/*.cpp 
 
 # compile the modules into our main function
-all: src/main.cpp 
+all: $(SOURCES)
 
-	$(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) src/main.cpp src/classes/*.cpp $(LIBRARIES)
+	$(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(SOURCES) $(LIBRARIES)
 
 
 # currently not being used -- deciding to use a different programatic structure for now
