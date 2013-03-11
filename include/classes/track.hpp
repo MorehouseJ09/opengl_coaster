@@ -6,7 +6,7 @@
 // include proper standardized libraries
 #include <vector>
 #include <iostream> //include basic c++ 11 functionality here
-
+#include <algorithm> //include foreach loop etc
 
 /*
 	A few important decisions have been made with this class

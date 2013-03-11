@@ -19,7 +19,7 @@ LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
 # COMPILER = g++
 # use the g++ 4.8 compiler instead of the defaul apple xcode cli tools installed version (4.2)
 COMPILER = /usr/local/gcc/usr/local/bin/g++
-COMPILERFLAGS = -O3 $(INCLUDE)
+COMPILERFLAGS = -O3 -std=c++11 $(INCLUDE)
 PROGRAM = current
 SOURCES = src/main.cpp src/classes/*.cpp src/modules/spline.cpp 
 
