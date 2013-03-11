@@ -4,8 +4,10 @@
 
 // include c++ libraries
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include <vector>
+
 
 namespace application {
 

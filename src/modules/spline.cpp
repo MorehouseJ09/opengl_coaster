@@ -96,14 +96,15 @@ namespace application {
 		// if we're working on a texture type item, we could simply have our callback multiply the correct elemnet by the correct piece before rendering
 
 		// initialize the matrix
-		float matrix[3][4];//initialize matrix multiplier!
-		float vector[3];//the final vector we're working on afterwards
+		double matrix[3][4];//initialize matrix multiplier!
+		double previousVector[3] = {points[0].x, points[0].y, points[0].z};
+		double currentVector[3];
 
 		// multiplierMatrix initialization via a lambda
-		auto createMatrix = [=, &matrix] () -> float {
+		auto createMatrix = [=, &matrix] () -> double {
 
 			// lambda to create the proper positional element
-			auto positionValue = [=] (int x, int y) -> float { 
+			auto positionValue = [=] (int x, int y) -> double { 
 
 				int value;//cache the value we are looking for here!
 				int pointCoordinate;//this is the x,y,z element
@@ -127,13 +128,28 @@ namespace application {
 					matrix[x][y] = positionValue(x,y);//set value using the intiialization lambda from above
 
 			// return the matrix we created!	
-		};//end of multiplier matrix initialization
+		}();//end of multiplier matrix initialization
+
+		// create a vector element to pass to the draw function
+		auto createVector = [&currentVector, matrix] (float u) -> float {
+
+			double coefficients[4] = {pow(u, 3), pow(u, 2), u, 1};
+
+			// loop through and create proper vector here
+			for (int x = 0; x < 3; x++) {
+				for (int i = 0; i < 4; i++) {
+					currentVector[x] += coefficients[i] * matrix[x][i];//apply matrix multiplier logic to this element and create the coordinate value
+				}
+			}//end of coordinate for loop
+		};
 
 		// p(u) = [u^3 u^2 u 1] M C
 		for (int i = 0; i <= 1.0; i = i+dU) {
 			// now calculate the actual element
+			previousVector = currentVector;//cache the current vector as the previous etc	
+			createVector(i);
+			callback(previouseVector, currentVector);
+		}//end of for loop for the 0 -> 1 incrementations
 
-
-		}	
-	}	
+	}
 };
