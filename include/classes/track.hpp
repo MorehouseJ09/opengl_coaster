@@ -5,6 +5,8 @@
 
 // include proper standardized libraries
 #include <vector>
+#include <iostream> //include basic c++ 11 functionality here
+
 
 /*
 	A few important decisions have been made with this class
@@ -18,25 +20,17 @@ namespace application {
 	class Track {
 
 		public:
-			Track(std::vector<Point>* points);			
+			Track(std::vector<Spline>* splines);			
 			~Track();
 
 		private:
 
-			init();//will be responsible for drawing the master linear array of points here
+			void init();//will be responsible for drawing the master linear array of points here
 
 		protected:	
 
-			std::vector<Spline>* spline;
+			std::vector<Spline>* splines;
 			int numberPoints;//how many points we're holding in our element
 			Point * points;//
-
-
-				
-
 	};
-
-
-
-
-}
+};

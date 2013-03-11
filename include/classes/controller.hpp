@@ -23,7 +23,7 @@ namespace application {
 		public:
 
 			// later on we will pass in a 
-			Controller(Spline * splines, int splineCounter); //pass in a pointer to a vector of arrays							
+			Controller(std::vector<Spline> * splines); //pass in a pointer to a vector of arrays							
 			~Controller();
 
 		public:
@@ -35,8 +35,7 @@ namespace application {
 
 		// initialize data structures that will be used later on with subclassed controllers
 		protected:
-			Spline * splines;//this is the master track element
-			int splineCounter;//how many elements are in the array of splines
+			std::vector<Spline> * splines;//vector of the splines etc
 
 	};
 };

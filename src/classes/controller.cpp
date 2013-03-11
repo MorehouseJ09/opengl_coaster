@@ -2,10 +2,10 @@
 
 namespace application {
 
-	Controller::Controller(Spline * splines, int splineCounter) : splines(splines) , splineCounter(splineCounter) {
+	Controller::Controller(std::vector<Spline> * splines) : splines(splines) {
 
 		// initialize the splines so that they are stored as members 	
-						
+										
 
 
 	}	

@@ -13,6 +13,13 @@ namespace application {
 	void Track::init() {
 
 		// initialize the master array of points here
+		// for_each(this->splines.begin(), this->splines.end(), [&this->numberPoints] (Spline currentSpline) {
+
+
+
+
+		// });		
+
 
 
 	}

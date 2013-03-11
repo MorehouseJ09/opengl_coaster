@@ -21,7 +21,7 @@ LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
 COMPILER = /usr/local/gcc/usr/local/bin/g++
 COMPILERFLAGS = -O3 $(INCLUDE)
 PROGRAM = current
-SOURCES = src/main.cpp src/classes/*.cpp src/modules/spline.cpp
+SOURCES = src/main.cpp src/classes/*.cpp src/modules/spline.cpp 
 
 # compile the modules into our main function
 all: $(SOURCES)
