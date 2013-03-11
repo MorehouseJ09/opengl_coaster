@@ -16,5 +16,13 @@ namespace application {
 		int numberPoints;// number of points that we have to build out this particular spline	
 		Point * points;//pointer to points
 	};
+
+	// initialize a spline loader function
+	// this function is responsible for returning a spline array pointer to the caller
+	Spline * loadSplines(char * trackFile);
+
+	// initialize a function to load an individual spline file
+	void loadSpline(char * splineFile, Spline * splines);
+	
 };
 

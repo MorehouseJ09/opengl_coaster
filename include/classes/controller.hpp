@@ -14,7 +14,6 @@
 #include "modules/spline.hpp"
 
 // include c++ libraries
-#include <vector>
 
 
 namespace application {
@@ -24,7 +23,7 @@ namespace application {
 		public:
 
 			// later on we will pass in a 
-			Controller(std::vector<Spline *> *); //pass in a pointer to a vector of arrays							
+			Controller(Spline * splines, int splineCounter); //pass in a pointer to a vector of arrays							
 			~Controller();
 
 		public:
@@ -33,6 +32,11 @@ namespace application {
 			// this will be called from the application control function after it has properly changed the elements that need to be 
 			void operator ()();
 
-			
+
+		// initialize data structures that will be used later on with subclassed controllers
+		protected:
+			Spline * splines;//this is the master track element
+			int splineCounter;//how many elements are in the array of splines
+
 	};
 };
