@@ -33,29 +33,25 @@ namespace application {
 			glClearColor(0.0, 0.0, 0.0, 1.0);
 
 			// reset the rotation of all axes to 0,0,0
-			glTranslatef(translation[0], translation[1], translation[2]);
+			glTranslatef(state->getTranslation[0], state->getTranslation[1], state->getTranslation[2]);
 
 			// set up the proper scale each time!
-			glScalef(scale[0], scale[1], scale[2]);
+			glScalef(state->getScale[0], state->getScale[1], getScale[2]);
 
-
-			// draw out each of the polygons needed for this object
-			// now need to call the proper draw elements
-			displayController();//this is responsible for initializing the correct display methods
-					
+			
 		// initialize the gl_projection matrix -- this is useful for setting up perspective etc ...
 		// initialize our matrix for the final viewing using projection ... 
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 
 		// fov angle, aspect ratio = width / height, near z, far z
-		gluPerspective(10.0f, windowWidth / windowHeight, 0.01, 1000.0);
+		// gluPerspective(10.0f, windowWidth / windowHeight, 0.01, 1000.0);
 
 		// swap the buffers and bring the second one out from hiding
 		glutSwapBuffers();
 
 		// check if we need to run the screenshot program etc
-		image::screenshotController();//run the controller
+		// image::screenshotController();//run the controller
 	}
 
 }

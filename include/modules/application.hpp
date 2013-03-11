@@ -2,9 +2,9 @@
 #define APPLICATION_HPP
 
 // initialize our other namespace functions for heightfield data and the display methods that will actually display our imagery
-#include "classes/states.hpp"
+#include "classes/state.hpp"
+#include "classes/controller.hpp"
 #include "modules/image.hpp"
-#include "modules/display.hpp"
 
 // initialize standard libraries needed if they were not already included
 #include <stdlib.h>

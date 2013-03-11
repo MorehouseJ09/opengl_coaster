@@ -9,8 +9,6 @@
 */
 
 // initialize our proper libraries for this application
-#include "modules/display.hpp"
-// initialize the standard gl libraries if they are not currently active
 #include <stdlib.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -30,11 +28,6 @@ namespace interaction {
 		g_iLeftMouseButton,
 		g_iMiddleMouseButton,
 		g_iRightMouseButton;
-
-	extern int currentDisplay;//what the current display element consists of! 
-	extern display::DisplayType displayTypeMap[3];//this is a mapper of the currently available display types
-
-
 
 	// mouse idle is useful for when the mouse is just sitting somewhere
 	void mouseidle(int x, int y); 

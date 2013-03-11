@@ -13,10 +13,6 @@ namespace interaction {
 		g_iMiddleMouseButton = 0,
 		g_iRightMouseButton = 0;
 
-	// implement my own custom mapping system for switching between the display states etc
-	int currentDisplay = 0;
-	display::DisplayType displayTypeMap[3] = {display::GRAYSCALE, display::POINT, display::WIREFRAME};
-
 	void mouseidle(int x, int y) {
 	  g_vMousePos[0] = x;
 	  g_vMousePos[1] = y;
@@ -56,6 +52,7 @@ namespace interaction {
 
 	// mouse drag changes mouse drags into information about scaling / rotation etc
 	void mousedrag(int x, int y) {
+	/*
 
 	  int vMouseDelta[2] = {x-g_vMousePos[0], y-g_vMousePos[1]};
 	  
@@ -97,6 +94,7 @@ namespace interaction {
 	  }
 	  g_vMousePos[0] = x;
 	  g_vMousePos[1] = y;
+	*/
 	}
 
 
@@ -120,7 +118,7 @@ namespace interaction {
 	}
 
 	void keyPress(int key, int x, int y) {
-
+	/*	
 		// change each time
 		float delta = 10.0;
 
@@ -169,6 +167,6 @@ namespace interaction {
 		}
 
 		glutPostRedisplay();
-		
+	*/		
 	}
 }

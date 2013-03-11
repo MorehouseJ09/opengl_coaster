@@ -1,7 +1,10 @@
+// load classes
 #include "classes/state.hpp" // basic state of the application this is a global variable
 #include "classes/controller.hpp" //basic controller of the application
-#include "classes/application.hpp"//initialize basic application handling -- this is modularized so that our world can be controlled from outside of the actual controller singleton class
-#include "modules/interaction.hpp" //responsible for handling user interaction
+
+// load modules 
+#include "modules/application.hpp"//initialize basic application handling -- this is modularized so that our world can be controlled from outside of the actual controller singleton class
+// #include "modules/interaction.hpp" //responsible for handling user interaction
 
 // include application code base / namespaces
 #include <stdlib.h>
@@ -56,7 +59,7 @@ int main (int argc, char ** argv) {
   // enable 3d buffering / z-buffer
   glEnable(GL_DEPTH_TEST);
   // enable point size for this particular program
-  glEnable(GL_PROGRAM_POINT_SIZE);
+  // glEnable(GL_PROGRAM_POINT_SIZE);
 
   // going to assume that we are using the default reshape function
   // just need our viewport set to 0,0,w,h
