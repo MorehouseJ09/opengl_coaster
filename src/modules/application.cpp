@@ -33,10 +33,10 @@ namespace application {
 			glClearColor(0.0, 0.0, 0.0, 1.0);
 
 			// reset the rotation of all axes to 0,0,0
-			glTranslatef(state->getTranslation[0], state->getTranslation[1], state->getTranslation[2]);
+			glTranslatef(state->getTranslation(0), state->getTranslation(1), state->getTranslation(2));
 
 			// set up the proper scale each time!
-			glScalef(state->getScale[0], state->getScale[1], getScale[2]);
+			glScalef(state->getScale(0), state->getScale(1), state->getScale(2));
 
 			
 		// initialize the gl_projection matrix -- this is useful for setting up perspective etc ...

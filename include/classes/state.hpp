@@ -17,11 +17,18 @@ namespace application {
 
 		public: //getter functions	
 
+			// get rotation 
 			const float getRotation(coordinate axe);//get a
-			// 
+			const float getRotation(int axe);
+
+			// get translation 
 			const float getTranslation(coordinate axe);
+			const float getTranslation(int axe);
+
 			// get the scale of the element etc
 			const float getScale(coordinate axe);
+			const float getScale(int axe);
+
 			// grab the distance the camera is back from the place
 			const float getCameraDistance();
 			//get the rotation of the camera etc 

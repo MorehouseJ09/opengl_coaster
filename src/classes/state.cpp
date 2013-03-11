@@ -47,18 +47,39 @@ namespace application {
 	}
 
 
+	// get the current rotation from the element
+	const float State::getRotation(int axe) {
+
+		return this->data.rotation[axe];
+	}
+
 	// grab translation in a particular direction
 	const float State::getTranslation(coordinate axe) {
 
 		return this->data.translation[this->getIndex(axe)];	
 	}
 
+	// get a translation axe from the state
+	const float State::getTranslation(int axe) {
 
+		return this->data.translation[axe];
+
+	}
+
+	// grab a scale axe element
 	const float State::getScale(coordinate axe) {
 
 		return this->data.scale[this->getIndex(axe)];
 	}
 
+	// overload scale 
+	const float State::getScale(int axe) {
+
+		return this->data.scale[axe];
+
+	}	
+
+	// 
 	const float State::getCameraDistance() {
 
 		return this->data.cameraDistance;
