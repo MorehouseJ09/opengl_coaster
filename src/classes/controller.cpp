@@ -13,13 +13,12 @@ namespace application {
 
 	Controller::~Controller() {
 
-
-
 	}
 
 	void Controller::operator() () {
 
 		// this is supposed to be call on each redraw element
+		
 		
 	}
 

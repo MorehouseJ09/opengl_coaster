@@ -58,25 +58,4 @@ namespace application {
 		image::screenshotController();//run the controller
 	}
 
-	// display controller is where special cases in the future can go
-	void displayController() {
-
-		// push a matrix to rotate our element so that z will actually be drawn as y so we don't have to worry about this!
-		glPushMatrix();
-
-			// by rotating around the x axis by 90.0
-			// when we draw a z value, it will look like a y value and we don't need to worry about that particular case
-			// multiply the current matrix by 90, but only around the x axis
-			glTranslatef(0,0,-100);
-			glScalef(0.1,0.1,0.1);
-
-			// set up the proper rotations
-			glRotatef(rotation[0], 1.0, 0.0,0.0);
-			glRotatef(rotation[1], 0.0, 1.0,0.0);
-			glRotatef(rotation[2], 0.0, 0.0,1.0);
-		
-		glPopMatrix();
-	}
-
-
 }

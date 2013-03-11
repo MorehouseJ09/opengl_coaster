@@ -4,9 +4,7 @@ namespace application {
 
 	Track::Track(std::vector<Spline> * splines) : splines(splines) {
 
-
-
-
+		this->init();//initialize the master array of all elements	
 
 	} 
 
@@ -20,7 +18,7 @@ namespace application {
 		// now allocate the proper size array for the points etc
 		this->points = (struct Point *)malloc(this->numberPoints * sizeof(struct Point));					
 
-		// 
+		// initialize the counter element
 		int counter = 0;
 
 		// now we need to copy the current spline into the proper place in the master array
@@ -38,12 +36,9 @@ namespace application {
 	Track::~Track() {
 
 		// deallocate the points object
-		dealloc(this->points);
+		// dealloc(this->points);
 
 	}
-
-	
-
 
 
 }

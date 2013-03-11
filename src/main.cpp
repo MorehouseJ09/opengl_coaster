@@ -14,8 +14,8 @@
 
 // initialize a global state object
 // keep this in memory for speed
-application::State state;//this is the global state object 
-
+application::State * state = new application::State();//this is the global state object 
+application::Controller * controller;
 
 // initialize main functionality etc
 int main (int argc, char ** argv) {
@@ -24,23 +24,23 @@ int main (int argc, char ** argv) {
   char track[10] = "track.txt";
 
   // send controller init a state pointer and pointer to spline vector
-  application::Controller(application::loadSplines(track), &state);//initialize the application controller with the proper state as well as the proper vector of splines
+  controller = new application::Controller(application::loadSplines(track), state);//initialize the application controller with the proper state as well as the proper vector of splines
 
   // set up the initializer function for glut
-  glutInit(&argc, argv);
+  // glutInit(&argc, argv);
 
   // initialize double buffer element
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
+  // glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
 
   // set up the window size 
-  glutInitWindowSize(state.getScreenWidth(), state.getScreenHeight());
+  // glutInitWindowSize(state->getScreenWidth(), state->getScreenHeight());
 
   // set the window position
   // could initialize this later to have the state class get the full screen or something?
-  glutInitWindowPosition(100, 100);
+  // glutInitWindowPosition(100, 100);
 
   // name the window etc ... 
-  glutCreateWindow("Image Height Field");
+  // glutCreateWindow("Image Height Field");
 
   // set up the main display function
   // glutDisplayFunc(application::display);

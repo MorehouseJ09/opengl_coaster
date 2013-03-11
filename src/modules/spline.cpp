@@ -23,13 +23,17 @@ namespace application {
 		// we should now know how many splines we have?
 		fscanf(fileList, "%d", &numberSplines);
 
+
 		// now that we know how many splines we need, we can properly initialize our vector
-		splines = new std::vector<Spline>(numberSplines);		
+		splines = new std::vector<Spline>();		
 
 		// loop through the number of splines that was specified by the beginning of the spline file and grab the corresponding file names etc
 		for (int i = 0; i < numberSplines; i++) {
 
+			// grab the file name
 			fscanf(fileList, "%s", fileName);//grab the filename for the current spline
+
+			// initial spline files' contents
 			loadSpline(fileName, splines);//initialize this particular spline with our load spline functionality
 		}
 
@@ -48,18 +52,15 @@ namespace application {
 		FILE * splineFile = fopen(fileName, "r");
 
 		// intiialize the type and length of the particular spline file
-		fscanf(splineFile, "%d %d", length, type);			
+		fscanf(splineFile, "%d %d", &length, &type);			
 
 		// initialize the spline structure for this element in the vector of splines
 		splines->push_back(Spline());
 
 		// use some pointer arithmetic to allocate the correct amount of memory for the points array in memory
 		splines->back().points = (struct Point *)malloc(length * sizeof(struct Point));
+
 		// now just initialize and save the number of points
 		splines->back().numberPoints = length;
 	} 
-
-	//  
-		
-
 };

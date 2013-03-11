@@ -16,7 +16,9 @@
 #include <GLUT/glut.h>
 
 // grab a copy of the main.cpp - declared state class that is global
-extern application::State state;
+extern application::State * state;
+extern application::Controller * controller;
+
 // 
 namespace application {
 
@@ -31,8 +33,6 @@ namespace application {
 	// display is what is shown each time
 	void display();
 
-	// display controller is responsible for abstracting away the calls to our display elements
-	void displayController();
 }
 
 #endif 	
