@@ -27,7 +27,8 @@ namespace application {
 
 		public://functions for access	
 
-			void draw();
+			void draw();//draw out the entire track
+			void drawPiece();//draw out a piece of the track
 
 		private:
 

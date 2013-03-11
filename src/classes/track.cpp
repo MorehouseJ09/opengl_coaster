@@ -42,9 +42,15 @@ namespace application {
 
 	void Track::draw() {
 
-		
-		
-		
+		// responsible for drawing the entire track out		
+
+	}
+
+	void drawPiece() {
+
+		// draw out a piece of the element
+
+
 	}
 
 }

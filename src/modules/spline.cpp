@@ -78,6 +78,13 @@ namespace application {
 
 			++counter;//initialize the counter to increment once
 		}
-
 	} 
+
+	void splineWorker(Point points[4], void (* callback)(Point p1, Point p2)) {
+
+		// responsible for calculating the point and then repeatedly calling the correct point class with our result
+
+	}	
+
+	
 };
