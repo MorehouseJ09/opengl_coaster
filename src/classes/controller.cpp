@@ -8,7 +8,6 @@ namespace application {
 
 		// initialize the splines so that they are stored as members 	
 		this->track = new Track(this->splines);
-
 	}	
 
 

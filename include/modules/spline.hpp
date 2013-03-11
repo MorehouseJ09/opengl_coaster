@@ -17,6 +17,8 @@ namespace application {
 		double z;
 	};
 
+
+	// vector<Spline> *
 	// basic spline structure
 	struct Spline {
 

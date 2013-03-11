@@ -4,6 +4,9 @@
 #include "modules/spline.hpp"
 
 // include proper standardized libraries
+#include <stdio.h>
+#include <stdlib.h>
+#include <cstring>
 #include <vector>
 #include <iostream> //include basic c++ 11 functionality here
 #include <algorithm> //include foreach loop etc
@@ -31,6 +34,6 @@ namespace application {
 
 			std::vector<Spline>* splines;
 			int numberPoints;//how many points we're holding in our element
-			Point * points;//
+			Point * points;//combination of all the points from each points
 	};
 };
