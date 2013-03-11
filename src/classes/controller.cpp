@@ -18,7 +18,7 @@ namespace application {
 	void Controller::operator() () {
 
 		// this is supposed to be call on each redraw element
-		
+			
 		
 	}
 

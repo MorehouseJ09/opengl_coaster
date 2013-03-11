@@ -37,6 +37,8 @@ namespace application {
 			loadSpline(fileName, splines);//initialize this particular spline with our load spline functionality
 		}
 
+		free(fileName);//free the pointer that we created for our 128 character c string
+
 		// return the pointer to the splines
 		return splines;
 	}
@@ -46,7 +48,11 @@ namespace application {
 
 		// responsible for loading in an individual file to the spline array
 		int length, //length of the spline file
+			counter, //current element that we are assigning in the spline
 			type;//type of spline that exists here
+
+		double x, y, z;//initialize temp values for this function to use for cleaner allocation
+
 
 		// initialize the file
 		FILE * splineFile = fopen(fileName, "r");
@@ -62,5 +68,15 @@ namespace application {
 
 		// now just initialize and save the number of points
 		splines->back().numberPoints = length;
+
+		while (fscanf(splineFile, "%lf %lf %lf", &x, &y, &z) != EOF) {
+
+			splines->back().points[counter].x = x;
+			splines->back().points[counter].y = y;
+			splines->back().points[counter].z = z;
+
+			++counter;//initialize the counter to increment once
+		}
+
 	} 
 };
