@@ -13,17 +13,20 @@
 // include project libraries first
 #include "modules/spline.hpp"
 
+
 // include c++ libraries
 
 
 namespace application {
+
+	class State;//forward declare
 
 	class Controller {
 
 		public:
 
 			// later on we will pass in a 
-			Controller(std::vector<Spline> * splines); //pass in a pointer to a vector of arrays							
+			Controller(std::vector<Spline> * splines, State * state); //pass in a pointer to a vector of arrays							
 			~Controller();
 
 		public:
@@ -36,6 +39,7 @@ namespace application {
 		// initialize data structures that will be used later on with subclassed controllers
 		protected:
 			std::vector<Spline> * splines;//vector of the splines etc
+			State * state;//store a pointer to the application state 
 
 	};
 };
