@@ -12,14 +12,14 @@
 
 // include project libraries first
 #include "modules/spline.hpp"
-
+#include "classes/track.hpp"
 
 // include c++ libraries
 
 
 namespace application {
 
-	class State;//forward declare
+	class State;//forward declare state class
 
 	class Controller {
 
@@ -40,6 +40,7 @@ namespace application {
 		protected:
 			std::vector<Spline> * splines;//vector of the splines etc
 			State * state;//store a pointer to the application state 
+			Track * track;//track pointer 	
 
 	};
 };
