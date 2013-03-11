@@ -7,13 +7,8 @@ namespace application {
 		// load in the track file and then initialize each of the spline files from it to show to our users
 		char * fileName = (char *)malloc(128 * sizeof(char));//initialize a string holder that is the size of 128 char string
 		FILE * fileList;// size of our file list 
-		FILE * fileSpline;//individual spline file
 		std::vector<Spline> * splines;
-		int iType,
-			numberSplines,//this is how many spline files we need to read
-			i = 0,
-			j, 
-			iLength;//
+		int	numberSplines;//this is how many spline files we need to read
 
 		// open the file name
 		fileList = fopen(trackFile, "r");
@@ -31,12 +26,14 @@ namespace application {
 		// now that we know how many splines we need, we can properly initialize our vector
 		splines = new std::vector<Spline>(numberSplines);		
 
+		// loop through the number of splines that was specified by the beginning of the spline file and grab the corresponding file names etc
 		for (int i = 0; i < numberSplines; i++) {
 
 			fscanf(fileList, "%s", fileName);//grab the filename for the current spline
 			loadSpline(fileName, splines);//initialize this particular spline with our load spline functionality
 		}
 
+		// return the pointer to the splines
 		return splines;
 	}
 
@@ -53,7 +50,7 @@ namespace application {
 		// intiialize the type and length of the particular spline file
 		fscanf(splineFile, "%d %d", length, type);			
 
-		// initialize our original spline 
+		// initialize the spline structure for this element in the vector of splines
 		splines->push_back(Spline());
 
 		// use some pointer arithmetic to allocate the correct amount of memory for the points array in memory
