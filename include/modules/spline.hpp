@@ -1,5 +1,12 @@
 #pragma once
 
+// include project libraries
+
+// include c++ libraries
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+
 namespace application {
 
 	// initialize basic control structures for splines etc
@@ -19,10 +26,10 @@ namespace application {
 
 	// initialize a spline loader function
 	// this function is responsible for returning a spline array pointer to the caller
-	Spline * loadSplines(char * trackFile);
+	std::vector<Spline> * loadSplines(char * trackFile);
 
 	// initialize a function to load an individual spline file
-	void loadSpline(char * splineFile, Spline * splines);
+	void loadSpline(char * splineFile, std::vector<Spline> * splines);
 	
 };
 

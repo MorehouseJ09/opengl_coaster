@@ -19,6 +19,11 @@ application::State state;//this is the global state object
 // initialize main functionality etc
 int main (int argc, char ** argv) {
 
+  char track[10] = "track.txt";
+  application::loadSplines(track);
+
+  return 0;
+
   // set up the initializer function for glut
   glutInit(&argc, argv);
 
