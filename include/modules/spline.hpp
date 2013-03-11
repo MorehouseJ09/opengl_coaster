@@ -17,8 +17,11 @@ namespace application {
 		double z;
 	};
 
+	// declare our change element for the cotmull-rom calculation
+	extern const float S;//s increment
+	extern const float dU;//increment of u
+	extern const float basisMatrix[4][4];//initialize catmull-rom basis matrix
 
-	// vector<Spline> *
 	// basic spline structure
 	struct Spline {
 
@@ -36,6 +39,4 @@ namespace application {
 	// spline worker is responsible for calculating the intermediate points and drawing out the pieces in between them etc
 	void splineWorker(Point points[4], void(*callback)(Point p1, Point p2));
 
-	
 };
-
