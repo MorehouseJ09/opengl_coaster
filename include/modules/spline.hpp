@@ -30,6 +30,10 @@ namespace application {
 
 	// initialize a function to load an individual spline file
 	void loadSpline(char * splineFile, std::vector<Spline> * splines);
+
+	// splineWorker is our main spline drawing class. This method will take in the two points and will then   	
+				
+
 	
 };
 
