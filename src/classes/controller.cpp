@@ -19,7 +19,7 @@ namespace application {
 
 		// this is supposed to be call on each redraw element
 			
-		
+		this->track->draw();
 	}
 
 

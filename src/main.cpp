@@ -48,7 +48,7 @@ int main (int argc, char ** argv) {
   glutDisplayFunc(application::display);
 
   // set the various callbacks for the interaction with opengl
-  // glutIdleFunc(application::idle);
+  glutIdleFunc(application::idle);
   // glutSpecialFunc(interaction::keyPress);//enable the keypress handling
 
   // enable our mouse drag function for controlling the heightfield image

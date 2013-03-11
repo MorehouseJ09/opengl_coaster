@@ -25,6 +25,10 @@ namespace application {
 			Track(std::vector<Spline>* splines);			
 			~Track();
 
+		public://functions for access	
+
+			void draw();
+
 		private:
 
 			void init();//will be responsible for drawing the master linear array of points here

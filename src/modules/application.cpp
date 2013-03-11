@@ -38,6 +38,7 @@ namespace application {
 			// set up the proper scale each time!
 			glScalef(state->getScale(0), state->getScale(1), state->getScale(2));
 
+			(*controller)();//call controller function
 			
 		// initialize the gl_projection matrix -- this is useful for setting up perspective etc ...
 		// initialize our matrix for the final viewing using projection ... 

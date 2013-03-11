@@ -40,5 +40,11 @@ namespace application {
 
 	}
 
+	void Track::draw() {
+
+		
+		
+		
+	}
 
 }
