@@ -20,12 +20,11 @@ application::State state;//this is the global state object
 // initialize main functionality etc
 int main (int argc, char ** argv) {
 
+  // 
   char track[10] = "track.txt";
+
   // send controller init a state pointer and pointer to spline vector
   application::Controller(application::loadSplines(track), &state);//initialize the application controller with the proper state as well as the proper vector of splines
-
-
-  return 0;
 
   // set up the initializer function for glut
   glutInit(&argc, argv);

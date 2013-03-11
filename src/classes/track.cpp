@@ -34,13 +34,15 @@ namespace application {
 		});
 	}
 
+	// destroy track elements
 	Track::~Track() {
 
-
+		// deallocate the points object
+		dealloc(this->points);
 
 	}
 
-
+	
 
 
 
