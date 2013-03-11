@@ -51,6 +51,7 @@ namespace application {
 			counter, //current element that we are assigning in the spline
 			type;//type of spline that exists here
 
+		// intiialize x,y,z elements for temporary allocation
 		double x, y, z;//initialize temp values for this function to use for cleaner allocation
 
 
