@@ -7,6 +7,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <vector>
+#include <string.h>
 
 
 namespace application {

@@ -141,14 +141,14 @@ namespace application {
 					currentVector[x] += coefficients[i] * matrix[x][i];//apply matrix multiplier logic to this element and create the coordinate value
 				}
 			}//end of coordinate for loop
-		};
+		};//create the current vector
 
 		// p(u) = [u^3 u^2 u 1] M C
 		for (int i = 0; i <= 1.0; i = i+dU) {
 			// now calculate the actual element
-			previousVector = currentVector;//cache the current vector as the previous etc	
+			memcpy(&previousVector, &currentVector[0], 3 * sizeof(double));
 			createVector(i);
-			callback(previouseVector, currentVector);
+			// callback(previousVector, currentVector);
 		}//end of for loop for the 0 -> 1 incrementations
 
 	}
