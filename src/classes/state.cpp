@@ -99,6 +99,12 @@ namespace application {
 
 		return this->data.screenHeight;
 	}
+
+	const mode State::getCurrentMode() {
+
+		return this->date.currentMode;
+
+	}
 	
 	//*********** PUBLIC SETTER FUNCTIONS **********//	
 	void State::setRotation(coordinate axe, float value) {
@@ -135,6 +141,14 @@ namespace application {
 		this->data.cameraRotation[this->getIndex(axe)] = value;	
 			
 	}
+
+	// set the current mode of the application
+	void State::setCurrentMode(mode currentMode) {
+
+		this->data.currentMode = currentMode;
+
+	}	
+
 
 
 

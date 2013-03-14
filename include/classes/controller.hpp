@@ -12,11 +12,17 @@
 
 // include project libraries first
 #include "modules/spline.hpp"
-#include "classes/track.hpp"
+
+// forward declare proper namespaces
+namespace environment;
+namespace track;
+
+// forward declare proper classes
+class environment::Environment;//forward declare our structure element
+class track::Track;//forward declare our track element
+class track::Structure;//forward declare structure of the track
 
 // include c++ libraries
-
-
 namespace application {
 
 	class State;//forward declare state class
@@ -41,6 +47,10 @@ namespace application {
 		protected:
 			std::vector<Spline> * splines;//vector of the splines etc
 			State * state;//store a pointer to the application state 
-			Track * track;//track pointer 	
+
+			// outside namespace elements
+			track::Track * track;//track pointer 	
+			track::Structure * structure;//this is the structure of the track
+			environment::Environment * environment;//environment pointer
 	};
 };

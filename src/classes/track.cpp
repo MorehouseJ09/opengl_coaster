@@ -1,11 +1,10 @@
 #include "classes/track.hpp"
 
-namespace application {
+namespace track {
 
 	Track::Track(std::vector<Spline> * splines) : splines(splines) {
 
 		this->init();//initialize the master array of all elements	
-
 	} 
 
 	void Track::init() {
@@ -52,5 +51,4 @@ namespace application {
 
 
 	}
-
 }

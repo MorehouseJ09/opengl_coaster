@@ -7,7 +7,6 @@
 
 # we assume the pic directory locates one level above,
 # change PIC_PATH if this is not the case
-# PIC_PATH = $(abspath $(CURDIR)/../pic)
 PIC_PATH = /usr/local/src/pic
 # set up include paths -- places to look for header files
 INCLUDE = -I$(PIC_PATH)
@@ -45,8 +44,7 @@ $(BUILDDIR)/%.o: %.cpp
 	# cc command is generic for all objects being created
 	$(cc-command) 	
 
-
-
+# compile all
 all: $(OBJECTS)
 
 	$(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) src/main.cpp $(OBJECTS) $(LIBRARIES)
@@ -58,7 +56,7 @@ test.o: classes/test.cpp
 # debug compiation -- takes slightly longer
 debug: src/main.cpp 
 
-	$(COMPILER) $(COMPILERFLAGS) -g -o $(PROGRAM) src/main.cpp src/modules/*.cpp $(LIBRARIES)
+	$(COMPILER) $(COMPILERFLAGS) -g -o $(PROGRAM) src/main.cpp src/modules/*.cpp 
 
 # clean up after ourselves
 clean:

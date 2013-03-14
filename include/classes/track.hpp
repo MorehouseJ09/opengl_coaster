@@ -17,7 +17,7 @@
 	We can't modularize the splines here so we're going to store a pointer to our global spline function and then we will create a master array in this class
 	We're going to build out functions here to hold elements to store our current position etc	
 */
-namespace application {
+namespace track {
 
 	class Track {
 

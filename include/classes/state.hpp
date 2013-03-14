@@ -37,6 +37,9 @@ namespace application {
 			const int getScreenWidth();
 			// get sccreen height
 			const int getScreenHeight();
+			// get the current mode of the element
+			const mode getCurrentMode();//get the current mode of the element
+
 
 		public: //setter functions	
 
@@ -53,6 +56,9 @@ namespace application {
 
 			// camera rotation is in just x,y for now
 			void setCameraRotation(coordinate axe, float value);	
+
+			// set the current mode
+			void setMode(mode currentMode);//set the current mode
 
 
 		private: // get index functions 
@@ -77,6 +83,8 @@ namespace application {
 				// // screen dimensions
 				int screenHeight;
 				int screenWidth;
+
+				mode currentMode;//what type of mode we are currently in!
 
 			} data;
 			// end data structure!
