@@ -21,19 +21,34 @@ LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
 COMPILER = /usr/local/gcc/usr/local/bin/g++
 COMPILERFLAGS = -O3 -std=c++11 $(INCLUDE)
 PROGRAM = current
-SOURCES = src/main.cpp src/classes/*.cpp src/modules/*.cpp 
+
+# declare the cpp file base path
+VPATH = src 
+BUILDDIR = build
+
+# lets define our cc-compile command to prevent repetitiveness 
+define cc-command
+	
+	$(CC) $(COMPILERFLAGS) $< -o $@
+	
+endef
+
+
+# declare the classes build command!
+$(BUILDDIR)/classes/%.o: %.cpp
+	$(cc-command) 	
+
+# build objects out of each build element
+$(BUILDDIR)/modules/%.o: %.cpp
+
+	$(cc-command)
 
 # compile the modules into our main function
-all: $(SOURCES)
+all: $(BUILDDIR)
 
-	$(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(SOURCES) $(LIBRARIES)
+	# $(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(OBJECT) $(LIBRARIES)
 
 
-# currently not being used -- deciding to use a different programatic structure for now
-# compile our modules object
-modules.o: src/modules/*.cpp include/modules/*.hpp 
-
-	$(COMPILER) $(COMPILERFLAGS) -c -o src/modules.o src/modules.cpp $(LIBRARIES)
 
 
 
