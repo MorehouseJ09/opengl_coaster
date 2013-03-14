@@ -12,19 +12,25 @@ PIC_PATH = /usr/local/src/pic
 
 # set up include paths -- places to look for header files
 INCLUDE = -I$(PIC_PATH)
+# include path for headers to search in
 INCLUDE += -I include
 
+# declare the cpp file base path
+VPATH = src 
+# declare the build directory
+BUILDDIR = build
+# include proper libraries etc
 LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
-
-# COMPILER = g++
 # use the g++ 4.8 compiler instead of the defaul apple xcode cli tools installed version (4.2)
 COMPILER = /usr/local/gcc/usr/local/bin/g++
+# be sure to pass the proper flags to include c++11 support
 COMPILERFLAGS = -O3 -std=c++11 $(INCLUDE)
+# initialize the output program variable
 PROGRAM = current
 
-# declare the cpp file base path
-VPATH=src 
-BUILDDIR = build
+
+
+
 
 # lets define our cc-compile command to prevent repetitiveness 
 define cc-command
@@ -38,27 +44,18 @@ endef
 $(BUILDDIR)%.o: %.cpp
 	$(cc-command) 	
 
-# build objects out of each build element
-# $(BUILDDIR)%.o: %.cpp
-
-# 	$(cc-command)
-
+# a simple test for the vpath -- working now!
 test.o: classes/test.cpp
-	g++ $^ -o $@
+	g++ -c $^ -o $@
 
 # compile the modules into our main function
 all: test.o
+	$(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(OBJECT) $(LIBRARIES)
 
-	# $(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(OBJECT) $(LIBRARIES)
-	g++ test.o -o test.out
-
-
-
-
+# debug compiation -- takes slightly longer
 debug: src/main.cpp 
 
 	$(COMPILER) $(COMPILERFLAGS) -g -o $(PROGRAM) src/main.cpp src/modules/*.cpp $(LIBRARIES)
-
 
 # clean up after ourselves
 clean:
