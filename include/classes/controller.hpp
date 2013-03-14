@@ -33,14 +33,14 @@ namespace application {
 			// functor operator is responsible for controlling the class on each and every run
 			// this will be responsible for calling the proper pieces that need to be redrawn etc
 			// this will be called from the application control function after it has properly changed the elements that need to be 
-			void operator ()();
-
+			void operator ()();//responsible for calling the correct draw element
+			void drawStatic();//draw from the static view
+			void drawRide();//draw from the riding the roller coaster perspective
 
 		// initialize data structures that will be used later on with subclassed controllers
 		protected:
 			std::vector<Spline> * splines;//vector of the splines etc
 			State * state;//store a pointer to the application state 
 			Track * track;//track pointer 	
-
 	};
 };

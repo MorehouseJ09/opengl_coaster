@@ -22,5 +22,17 @@ namespace application {
 		this->track->draw();
 	}
 
+	void Controller::drawStatic() {
+
+		
+
+	}	
+
+	void Controller::drawRide() {
+
+		
+		
+	}
+
 
 };
