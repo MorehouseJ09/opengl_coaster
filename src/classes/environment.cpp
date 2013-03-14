@@ -3,7 +3,7 @@
 namespace environment {
 
 	Environment::Environment() {
-
+		
 			
 			
 
@@ -25,14 +25,14 @@ namespace environment {
 
 	void Environment::drawGround() {
 
-		
+		printf("HELLO FROM GROUND SECTION");
 
 
 	}
 
 	void Environment::drawSky() {
 
-
-		
+		printf("HELLO FROM SKY ELEMENT");
+			
 	}
 }

@@ -37,6 +37,9 @@ namespace application {
 
 		// responsible for drawing the element as needed in the static view as well as setting up the project ion viewing
 		// this is the view where we are simply going to be look at the coaster / park from far away		
+
+		(*this->environment)();//draw out the environment
+
 	}	
 
 	void Controller::drawRide() {
