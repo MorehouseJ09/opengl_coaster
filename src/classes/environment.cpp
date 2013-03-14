@@ -4,7 +4,7 @@ namespace environment {
 
 	Environment::Environment() {
 
-		
+			
 			
 
 	}
@@ -14,5 +14,25 @@ namespace environment {
 
 
 
+	}
+
+	void Environment::operator() () {
+
+		this->drawGround();//draw the basic ground structure
+		this->drawSky();//draw the sky etc structure
+
+	}
+
+	void Environment::drawGround() {
+
+		
+
+
+	}
+
+	void Environment::drawSky() {
+
+
+		
 	}
 }

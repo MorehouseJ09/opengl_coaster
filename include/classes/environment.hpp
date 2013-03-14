@@ -11,7 +11,11 @@ namespace environment {
 			Environment();
 			~Environment();
 
+		public:
 
+			void operator()();//the actual controller for the environment namespace	
+			void drawGround();//this will be responsible for drawing the ground later on with composed objects
+			void drawSky();//this will be responsible for drawing the sky later with some sort of composition etc
 
 	};
 };
