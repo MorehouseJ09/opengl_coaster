@@ -12,7 +12,7 @@ PIC_PATH = /usr/local/src/pic
 
 # set up include paths -- places to look for header files
 INCLUDE = -I$(PIC_PATH)
-INCLUDE += -Iinclude
+INCLUDE += -I include
 
 LIBRARIES = -L$(PIC_PATH) -framework OpenGL -framework GLUT -lpicio -ljpeg
 
@@ -23,7 +23,7 @@ COMPILERFLAGS = -O3 -std=c++11 $(INCLUDE)
 PROGRAM = current
 
 # declare the cpp file base path
-VPATH = src 
+VPATH=src 
 BUILDDIR = build
 
 # lets define our cc-compile command to prevent repetitiveness 
@@ -35,19 +35,22 @@ endef
 
 
 # declare the classes build command!
-$(BUILDDIR)/classes/%.o: %.cpp
+$(BUILDDIR)%.o: %.cpp
 	$(cc-command) 	
 
 # build objects out of each build element
-$(BUILDDIR)/modules/%.o: %.cpp
+# $(BUILDDIR)%.o: %.cpp
 
-	$(cc-command)
+# 	$(cc-command)
+
+test.o: classes/test.cpp
+	g++ $^ -o $@
 
 # compile the modules into our main function
-all: $(BUILDDIR)
+all: test.o
 
 	# $(COMPILER) $(COMPILERFLAGS) -o $(PROGRAM) $(OBJECT) $(LIBRARIES)
-
+	g++ test.o -o test.out
 
 
 
