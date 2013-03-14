@@ -1,6 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
 
 namespace environment {
 

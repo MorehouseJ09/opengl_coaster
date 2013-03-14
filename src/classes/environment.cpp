@@ -25,14 +25,20 @@ namespace environment {
 
 	void Environment::drawGround() {
 
-		printf("HELLO FROM GROUND SECTION");
+		glBegin(GL_POLYGON);	
 
+			glColor3f(0, 1.0, 0.0);
+			glVertex3f(-50, 0, 0);
+			glVertex3f(50, 0, 0);
+			glVertex3f(50, 50, 0);
+			glVertex3f(-50, 50, 0);
 
+		glEnd();
 	}
 
 	void Environment::drawSky() {
 
-		printf("HELLO FROM SKY ELEMENT");
+		printf("HELLO FROM SKY ELEMENT\n");
 			
 	}
 }
