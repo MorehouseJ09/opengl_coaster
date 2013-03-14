@@ -100,9 +100,9 @@ namespace application {
 		return this->data.screenHeight;
 	}
 
-	const mode State::getCurrentMode() {
+	const mode State::getApplicationMode() {
 
-		return this->date.currentMode;
+		return this->data.applicationMode;
 
 	}
 	
@@ -143,9 +143,9 @@ namespace application {
 	}
 
 	// set the current mode of the application
-	void State::setCurrentMode(mode currentMode) {
+	void State::setApplicationMode(mode applicationMode) {
 
-		this->data.currentMode = currentMode;
+		this->data.applicationMode = applicationMode;
 
 	}	
 

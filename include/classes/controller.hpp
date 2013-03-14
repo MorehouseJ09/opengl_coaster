@@ -13,14 +13,18 @@
 // include project libraries first
 #include "modules/spline.hpp"
 
-// forward declare proper namespaces
-namespace environment;
-namespace track;
+namespace environment {
 
-// forward declare proper classes
-class environment::Environment;//forward declare our structure element
-class track::Track;//forward declare our track element
-class track::Structure;//forward declare structure of the track
+	class Environment;
+
+};
+
+namespace track {
+
+	class Track;
+	class Structure;
+
+};
 
 // include c++ libraries
 namespace application {

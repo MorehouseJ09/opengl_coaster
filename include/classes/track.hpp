@@ -22,7 +22,7 @@ namespace track {
 	class Track {
 
 		public:
-			Track(std::vector<Spline>* splines);			
+			Track(std::vector<application::Spline>* splines);			
 			~Track();
 
 		public://functions for access	
@@ -36,8 +36,8 @@ namespace track {
 
 		protected:	
 
-			std::vector<Spline>* splines;
+			std::vector<application::Spline>* splines;
 			int numberPoints;//how many points we're holding in our element
-			Point * points;//combination of all the points from each points
+			application::Point * points;//combination of all the points from each points
 	};
 };

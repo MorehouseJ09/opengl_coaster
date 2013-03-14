@@ -46,7 +46,7 @@ namespace application {
 		glLoadIdentity();
 
 		// fov angle, aspect ratio = width / height, near z, far z
-		gluPerspective(10.0f, windowWidth / windowHeight, 0.01, 1000.0);
+		// gluPerspective(10.0f, windowWidth / windowHeight, 0.01, 1000.0);
 
 		// swap the buffers and bring the second one out from hiding
 		glutSwapBuffers();

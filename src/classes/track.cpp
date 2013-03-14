@@ -1,5 +1,8 @@
 #include "classes/track.hpp"
 
+using namespace application;
+
+
 namespace track {
 
 	Track::Track(std::vector<Spline> * splines) : splines(splines) {
