@@ -11,6 +11,7 @@
 */
 
 // include project libraries first
+#include "classes/state.hpp"
 #include "modules/spline.hpp"
 
 namespace environment {

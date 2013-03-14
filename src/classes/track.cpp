@@ -1,7 +1,7 @@
 #include "classes/track.hpp"
 
-using namespace application;
 
+using namespace application;
 
 namespace track {
 
@@ -55,3 +55,5 @@ namespace track {
 
 	}
 }
+
+

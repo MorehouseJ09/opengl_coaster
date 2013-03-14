@@ -41,3 +41,6 @@ namespace track {
 			application::Point * points;//combination of all the points from each points
 	};
 };
+
+
+

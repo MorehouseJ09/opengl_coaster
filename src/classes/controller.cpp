@@ -25,6 +25,11 @@ namespace application {
 	void Controller::operator() () {
 
 		// this is supposed to be call on each redraw element
+		if (this->state->getApplicationMode() == application::NORMAL)
+
+			this->drawStatic();
+
+		else this->drawRide();
 		
 	}
 
